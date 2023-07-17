@@ -1,0 +1,104 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+@mixin flex{
+    display:flex;
+   align-items: center;
+}
+@mixin border{
+    border-radius: 2em;
+    border: none;
+    height:3em;
+    
+}
+body{
+    font-family: arial,sans-serif;
+    background-color: rgb(86, 105, 167);
+    width:100%;
+ height:100vh;
+ color:white;
+   
+}
+
+.container{
+   @include flex;
+    padding-top: 2em;
+    flex-direction: column;
+    margin:auto;
+     right:0;
+     left:0;
+     bottom: 0;
+    width:60%;
+    height: 50%;
+    position: absolute;
+    top:0;
+    background-color: rgba(232, 223, 223, 0.116);
+  
+  .input-section{
+    @include flex;
+    justify-content: center;
+    width:100%;
+    input{
+        width:70%;
+    @include border;
+        padding-left: 2em
+    }
+    button{
+      @include border;
+      width:20%;
+      cursor: pointer;
+    }
+  }
+    p{
+    
+    margin-top:2em;
+   }
+
+
+
+   .output-section{
+    width:100%;
+  display:flex;
+   padding-left: 2em;
+
+ 
+ 
+
+
+  .temp-section{
+    display: flex;
+    flex-direction: column;
+    
+    #temp{
+        font-size: 17vw;
+       }
+    
+    }
+
+   }
+   .celsius{
+    padding-top: 2em;
+   }
+
+   .humidity-wind-section{
+    margin-left: 3em;
+    @include flex;
+    flex-direction: column;
+    color:rgb(255, 255, 255);
+    
+    p{
+        top: 3em
+    }
+   }
+}
+
+@media only screen and (max-width:420px) {
+  .output-section{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
