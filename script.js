@@ -24,19 +24,19 @@ const bodyImg =document.getElementById('body');
      
       if(weatherData.match('Mist')){
         
-        img.src="/weatherReport/imgs/mist.gif"
+        img.src="/imgs/mist.gif"
       }if(weatherData.match('Rain')){
       
-       img.src="/weatherReport/imgs/raining-rainy-weather.gif"
+       img.src="/imgs/raining-rainy-weather.gif"
       }if(weatherData.match('Clouds')){
        
         img.src="/imgs/cloudy.gif";
        }if(weatherData.match('Clear')){
        
-        img.src="/weatherReport/imgs/sunny.gif";
+        img.src="/imgs/sunny.gif";
        }if(weatherData.match('Drizzle')){
       
-      img.src="/weatherReport/imgs/mist.gif"
+      img.src="/imgs/mist.gif"
       }
       
     }).catch(error => console.log("errao"));   
