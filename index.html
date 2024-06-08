@@ -1,36 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>Weather Report</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
-<body id="body">
-
-   <img src="" id="img" style="width:100%; height:100vh">
-  <div class="container" id="cont">
-
+<body>
+  <img src="" id="img" alt="Weather Image" style="width:100%; height:100vh; position: absolute; z-index: -1; object-fit: cover;">
+  <div class="container">
 
     <div class="input-section">
-      <input id="city-name" type="text">
-      <button id="btn" onclick="temp()">search</button>
+      <input id="city-name" type="text" placeholder="Enter city name">
+      <button id="btn">Search</button>
     </div>
     <div class="output-section">
       <div class="temp-section">
-
         <span id="temp"></span>
-      
+        <div class="celsius">°C</div>
         <i id="condition"></i>
-
       </div>
-      <div class="celsius">°C</div>
       <div class="humidity-wind-section">
-        <p>Humidity:<span id="humi"></span></p>
-        <p>Wind Speed:<span id="wind"></span></p>
+        <p>Humidity: <span id="humi"></span></p>
+        <p>Wind Speed: <span id="wind"></span></p>
       </div>
     </div>
 
