@@ -6,9 +6,10 @@
   <link rel="stylesheet" href="style.css">
   <title>Weather Report</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body>
-  <img src="" id="img" alt="Weather Image" style="width:100%; height:100vh; position: absolute; z-index: -1; object-fit: cover;">
+  <img src="" id="img" alt="Weather Image" style="display:none; width:100%; height:100vh; position: absolute; z-index: -1; object-fit: cover;">
   <div class="container">
 
     <div class="input-section">
@@ -20,6 +21,9 @@
         <span id="temp"></span>
         <div class="celsius">°C</div>
         <i id="condition"></i>
+      </div>
+      <div class="city-name-section">
+        <p>City: <span id="city"></span></p>
       </div>
       <div class="humidity-wind-section">
         <p>Humidity: <span id="humi"></span></p>

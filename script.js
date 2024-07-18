@@ -6,12 +6,22 @@ function getWeather() {
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`;
 
     fetch(apiUrl)
-        .then(response => response.json())
+        .then(response => 
+            {
+                if (!response.ok) {
+                    throw new Error('Something went wrong');
+                }
+                return response.json();
+            }
+        )
         .then(data =>{ 
           console.log(data);
           updateWeather(data)}
         )
-        .catch(error => console.error("Error:", error));
+        .catch(error => {
+             console.error("Error:", error)
+             displayError();
+        });
 }
 
 function updateWeather(data) {
@@ -30,6 +40,7 @@ function updateWeather(data) {
     humidityElement.innerHTML = `${humidity}%`;
     windElement.innerHTML = `${windSpeed} Km/h`;
     conditionElement.innerHTML = weatherCondition;
+    document.getElementById('city').innerHTML = data.name;
 
     const weatherImages = {
         Mist: "imgs/mist.gif",
@@ -43,5 +54,24 @@ function updateWeather(data) {
     };
 
     imgElement.src = weatherImages[weatherCondition] || "imgs/defaultimg.jpg";
+    imgElement.style.display = 'block';
     document.getElementById('city-name').value = '';
+
+}
+
+
+function displayError() {
+    const tempElement = document.getElementById('temp');
+    const humidityElement = document.getElementById('humi');
+    const windElement = document.getElementById('wind');
+    const conditionElement = document.getElementById('condition');
+    const imgElement = document.getElementById('img');
+
+    tempElement.innerHTML = 'Error';
+    humidityElement.innerHTML = '-';
+    windElement.innerHTML = '-';
+    conditionElement.innerHTML = '-';
+    document.getElementById('city').innerHTML = '-';
+
+    imgElement.style.display = 'none'; 
 }
